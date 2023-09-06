@@ -60,7 +60,7 @@ import datetime
 
 def get_weather(row):
 
-  url = "https://api.openweathermap.org/data/2.5/weather?lat={row.latitude}&lon={row.longitude}&appid={59f4f19939715e5bd6e8286531137188}"
+  url = "https://api.openweathermap.org/data/2.5/weather?lat={row.latitude}&lon={row.longitude}&appid={my API Key}"
   my_response = requests.get(url)
   data = my_response.json()
 
@@ -82,7 +82,7 @@ df = pd.concat ([df, pd.json_normalize(df_weather)], axis=1)
 
 def get_air_pollution(row):
 
-  url = "http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={API key}?lat={row.latitude}&lon={row.longitude}&appid={59f4f19939715e5bd6e8286531137188}"
+  url = "http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={API key}?lat={row.latitude}&lon={row.longitude}&appid={my API Key}"
   my_response = requests.get(url)
   data = my_response.json()
 
